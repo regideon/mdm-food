@@ -1,0 +1,153 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+@source '../../../../app/Filament/**/*';
+@source '../../../../resources/views/filament/**/*';
+@source '../../../../resources/views/components/**/*';
+
+.fi-btn {
+    @apply rounded-lg px-3 py-2 text-sm font-medium outline-none;
+}
+
+/* ===== SIDEBAR - Dark Navy ===== */
+.fi-sidebar {
+    @apply bg-[#193859];
+}
+
+/* ===== NAV GROUP SPACING ===== */
+.fi-sidebar-nav-groups {
+    @apply gap-0;
+}
+
+.fi-sidebar-nav-group {
+    @apply py-1;
+}
+
+.fi-sidebar-nav-group-btn {
+    @apply py-1;
+}
+
+.fi-sidebar-nav-item {
+    @apply py-0;
+}
+
+/* ===== SIDEBAR TEXT & ICONS ===== */
+.fi-sidebar-group-label {
+    @apply text-white text-[11px] uppercase tracking-wide;
+}
+
+.fi-sidebar-item-label {
+    @apply text-white font-semibold;
+}
+
+.fi-sidebar-item-icon {
+    @apply text-white;
+}
+
+.fi-sidebar-nav-group-btn {
+    @apply text-white;
+}
+
+/* ===== FORCE ALL SIDEBAR ITEMS TRANSPARENT FIRST ===== */
+.fi-sidebar a,
+.fi-sidebar button,
+.fi-sidebar li > a,
+.fi-sidebar li > button,
+.fi-sidebar-item-btn,
+.fi-sidebar-item-grouped,
+.fi-sidebar-item-grouped-border,
+.fi-sidebar-item-grouped-border-part {
+    @apply bg-transparent bg-none shadow-none;
+}
+
+/* ===== HOVER STATES ===== */
+.fi-sidebar-item-btn:hover,
+.fi-sidebar-nav-group-btn:hover {
+    @apply bg-white/[0.08];
+}
+
+.fi-sidebar-item-btn:hover .fi-sidebar-item-label {
+    @apply text-white;
+}
+
+/* ===== ACTIVE NAV ITEM ===== */
+.fi-sidebar-item.fi-active > .fi-sidebar-item-btn {
+    @apply bg-[#30435c];
+}
+
+.fi-sidebar-item.fi-active > .fi-sidebar-item-btn .fi-sidebar-item-label {
+    @apply text-white;
+}
+
+.fi-sidebar-item.fi-active > .fi-sidebar-item-btn .fi-sidebar-item-icon {
+    @apply text-white;
+}
+
+/* ===== SIDEBAR FOOTER ===== */
+.fi-sidebar-footer {
+    @apply border-t border-white/[0.08];
+}
+
+/* ===== TOPBAR ===== */
+.fi-topbar {
+    @apply bg-white border-b border-gray-200 shadow-sm;
+}
+
+/* ===== STAT CARDS ===== */
+.fi-wi-stats-overview-stat {
+    @apply border-l-0 rounded-xl shadow-sm p-5;
+}
+
+.fi-wi-stats-overview-stat-value {
+    @apply text-[28px] font-bold text-gray-900;
+}
+
+.fi-wi-stats-overview-stat-label {
+    @apply text-xs text-gray-500;
+}
+
+.fi-wi-stats-overview {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+
+@media (min-width: 1024px) {
+    .fi-wi-stats-overview {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    }
+}
+
+/* ===== MAIN CONTENT AREA ===== */
+.fi-main {
+    @apply bg-slate-50;
+}
+
+.fi-main-ctn {
+    @apply max-w-full px-6;
+}
+
+.fi-dashboard-widgets,
+.fi-widgets-container {
+    @apply w-full;
+}
+
+.fi-page-header-heading {
+    @apply text-[22px] font-bold text-gray-900;
+}
+
+/* ===== LOGIN PAGE ===== */
+.fi-simple-main-ctn {
+    background-image: url(/images/2148319152.jpg);
+    @apply bg-no-repeat bg-cover bg-center h-screen flex justify-center items-center;
+}
+
+.fi-topbar {
+    @apply bg-[#193859];
+}
+
+/* ===== HIDE BREADCRUMBS AND HEADER TITLE ===== */
+.fi-breadcrumbs {
+    @apply hidden;
+}
+
+.fi-header-heading {
+    @apply hidden;
+}

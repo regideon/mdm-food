@@ -1,0 +1,176 @@
+/* ══════════════════════════════════════════════════════
+   REPEATER ENHANCEMENTS
+   ══════════════════════════════════════════════════════ */
+
+/* ── Base Table Layout ──────────────────────────────── */
+.fi-fo-table-repeater {
+    max-height: 60vh;
+    overflow-x: auto;
+    overflow-y: auto;
+    white-space: nowrap;
+    font-size: 0.75rem;
+}
+
+.fi-fo-table-repeater table {
+    table-layout: fixed !important;
+    min-width: max-content;
+    width: auto;
+}
+
+/* ── Cell Sizing ────────────────────────────────────── */
+.fi-fo-table-repeater th,
+.fi-fo-table-repeater td {
+    white-space: nowrap;
+    min-width: fit-content;
+    padding: 4px 6px !important;
+    font-size: 0.75rem;
+}
+
+.fi-fo-table-repeater th {
+    font-size: 0.7rem;
+    font-weight: 600;
+    position: relative;
+    user-select: none;
+}
+
+.fi-fo-table-repeater td:first-child {
+    min-width: 150px;
+}
+
+/* ── Inputs & Selects ───────────────────────────────── */
+.fi-fo-table-repeater .fi-input,
+.fi-fo-table-repeater .fi-select-input,
+.fi-fo-table-repeater input,
+.fi-fo-table-repeater select {
+    font-size: 0.75rem !important;
+    padding: 2px 6px !important;
+    min-height: unset !important;
+    height: 28px !important;
+}
+
+.fi-fo-table-repeater .fi-input-wrp {
+    min-height: unset !important;
+}
+
+.fi-fo-table-repeater .fi-fo-field-label {
+    display: none;
+}
+
+/* ── Sticky Columns ─────────────────────────────────── */
+.fi-fo-table-repeater th:nth-child(1),
+.fi-fo-table-repeater td:nth-child(1),
+.fi-fo-table-repeater th:nth-child(2),
+.fi-fo-table-repeater td:nth-child(2) {
+    position: sticky !important;
+    z-index: 5;
+}
+
+.fi-fo-table-repeater th:nth-child(1),
+.fi-fo-table-repeater td:nth-child(1) {
+    left: 0;
+    background: white;
+}
+
+.fi-fo-table-repeater th:nth-child(2),
+.fi-fo-table-repeater td:nth-child(2) {
+    left: 150px;
+    background: white;
+}
+
+/* ── Sticky Header Row ──────────────────────────────── */
+.fi-fo-table-repeater thead th {
+    position: sticky !important;
+    top: 0;
+    z-index: 8;
+    background: white;
+}
+
+.fi-fo-table-repeater thead th:nth-child(1),
+.fi-fo-table-repeater thead th:nth-child(2) {
+    z-index: 9;
+}
+
+/* ── Sticky Actions Column (right) ──────────────────── */
+.fi-fo-table-repeater th:last-child,
+.fi-fo-table-repeater td:last-child {
+    position: sticky !important;
+    right: 0;
+    z-index: 6;
+    background: white;
+    box-shadow: -2px 0 4px rgba(0, 0, 0, 0.06);
+}
+
+.fi-fo-table-repeater thead th:last-child {
+    z-index: 10;
+}
+
+/* ── Column Resize Handle ───────────────────────────── */
+.col-resize-handle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5px;
+    height: 100%;
+    cursor: col-resize;
+    z-index: 10;
+    background: transparent;
+    transition: background 0.15s;
+}
+
+.col-resize-handle:hover,
+.col-resize-handle.is-resizing {
+    background: #3b82f6;
+}
+
+.fi-fo-table-repeater.is-resizing {
+    user-select: none;
+    cursor: col-resize;
+}
+
+/* ── Sticky Add Row Button ──────────────────────────── */
+.fi-fo-table-repeater .fi-fo-repeater-add-action-ctn,
+.fi-fo-table-repeater > div:last-child,
+.fi-fo-table-repeater-add {
+    position: sticky !important;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    background: white;
+    border-top: 0.5px solid var(--gray-200, #e5e7eb);
+    padding: 6px 8px;
+    width: fit-content;
+    font-size: 0.75rem;
+}
+
+/* ── Fullscreen Button ──────────────────────────────── */
+.repeater-fullscreen-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 8px;
+    border-radius: 4px;
+    border: 0.5px solid var(--gray-300, #d1d5db);
+    background: transparent;
+    color: var(--gray-500, #6b7280);
+    cursor: pointer;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.repeater-fullscreen-btn:hover {
+    background: var(--gray-100, #f3f4f6);
+    color: var(--gray-800, #1f2937);
+}
+
+/* ── Row Selection ──────────────────────────────────── */
+.fi-fo-table-repeater tbody tr {
+    cursor: default;
+}
+
+.fi-fo-table-repeater tbody tr.row-selected td {
+    background: #eff6ff !important;
+    outline: 1px solid #bfdbfe;
+    outline-offset: -1px;
+}
